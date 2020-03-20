@@ -1,0 +1,15 @@
+{ 
+    "token" : "NjkwNTc3OTExMzI5MTkzOTg3.XnTc2A.jwlY_QaA467ggrJpKBeRi7LtY8M",
+    "prefix"  : "!",
+    
+    "firebaseConfig" : {
+        "apiKey": "AIzaSyChkkK6FBHIzJW3d46CcHTo-fBvpXbBcSs",
+        "authDomain": "viniciusbot-f2997.firebaseapp.com",
+        "databaseURL": "https://viniciusbot-f2997.firebaseio.com",
+        "projectId": "viniciusbot-f2997",
+        "storageBucket": "viniciusbot-f2997.appspot.com",
+        "messagingSenderId": "932611746954",
+        "appId": "1:932611746954:web:1fc3457e49141cd4d15173",
+        "measurementId": "G-W4H71BBZEV"
+    }
+}
