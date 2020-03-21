@@ -10,12 +10,13 @@ bot.on('raw', async dados => {
 
     let membro = servidor.members.get(dados.d.user_id)
 
-    let visitante = "657353354304946176"
+    //let visitante = "657353354304946176"
+    let cidadao = '657353350102384694';
 
     if (dados.t === "MESSAGE_REACTION_ADD") {
         if (dados.d.emoji.id === "690654870356754552") {
-            if (membro.roles.has(visitante)) return
-            membro.addRole(visitante)
+            if (membro.roles.has(cidadao)) return
+            membro.addRole(cidadao)
         }
     }
 })
