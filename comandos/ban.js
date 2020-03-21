@@ -21,12 +21,12 @@ exports.run = async (bot, message, args, comando) => {
 	}
 
 	let Embed = new Discord.RichEmbed()
-	.setTitle("Banimento")
-	.setDescription(`${member.user.tag} foi banido do servidor.`)
-	.addField(`Banimento efetuado por` , `${message.author}`)
-	.setColor("RED")
-	.setFooter('Newark Roleplay')
-	.setTimestamp()
+		.setTitle("Banimento")
+		.setDescription(`${member.user.tag} foi banido do servidor.`)
+		.addField(`Banimento efetuado por`, `${message.author}`)
+		.setColor("RED")
+		.setFooter('Newark Roleplay')
+		.setTimestamp()
 
 
 	return member

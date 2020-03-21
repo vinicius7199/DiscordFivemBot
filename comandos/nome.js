@@ -18,7 +18,7 @@ exports.run = async (bot, message, args, comando) => {
             .setFooter('Newark Roleplay')
             .setTimestamp()
         message.channel.send(pEmbed)
-        message.member.setNickname(msgs)
+
 
     }
 }

@@ -7,29 +7,21 @@ exports.run = async (bot, message) => {
     message.delete().catch(O_o => { });
 
 
-    let pages = [`Moderação`, `Fun`, `Outros`]
+    let pages = [`Principais`, `Fun`]
     let mensagem =
         [
-            `
-    !banir - Banir alguém do servidor **(apenas ADM)**
-    !kick - Kikar alguém do servidor **(apenas ADM)**
-    !addrole - Adicionar cargo **(apenas ADM)**
-    !removerole - Remover cargo **(apenas ADM)**
-    !delete - Deletar msgs **(apenas ADM)**
-    !dizer - Para fazer um anunciamento**(apenas ADM)**
+    `
+    !nick - Para mudar de nome
+    !server - Para mais informações sobre o servidor
+    !ip
     `,
 
             `
     !gado - Para saber quem é o mais gado
     !trigger - Montagem trigger
-    `,
-
-            `
-     !nick - Para mudar de nome
-     !server - Para mais informações sobre o servidor
-     !level - Para saber seu level atual
-     `]
-
+    !preso - Montagem preso
+    `
+    ]
     const Embed = {
         color: 0x0099ff,
         title: `Olá`,
@@ -43,10 +35,6 @@ exports.run = async (bot, message) => {
             url: 'https://cdn.discordapp.com/avatars/671389178805747731/83eed4f3bc40dd409557d547fa56d52b.png?size=128',
         },
         fields: [
-            {
-                name: 'IP DO SERVIDOR',
-                value: '0.0.0.0:30120',
-            },
             {
                 name: 'Precisa de ajuda?',
                 value: 'Eu irei te ajudar! Reaja com 🔰 para abrir um ticket ou Reaja com 💡 para lhe dizer meus comandos!',
@@ -66,7 +54,6 @@ exports.run = async (bot, message) => {
             const filter = (reaction, user) => {
                 return ['🔰', '💡'].includes(reaction.emoji.name) && user.id === message.author.id;
             };
-
             m.awaitReactions(filter, { max: 1, time: 80000, errors: ['time'] })
                 .then(collected => {
                     const reaction = collected.first();
@@ -105,14 +92,12 @@ exports.run = async (bot, message) => {
                                 })
                             })
                         })
-
                     } if (reaction.emoji.name === '🔰') {
                         {
                             if (!message.guild.me.hasPermission("MANAGE_CHANNELS")) {
                                 message.channel.send(`Não tenho permissão para criar canais. Entre em contato direto com um staff!`);
                             } else {
                                 let everyone = message.guild.defaultRole;
-
                                 const nome = `Ticket ${message.author.id}`;
 
                                 if (message.guild.channels.find(channel => channel.name === nome.toLowerCase().replace(" ", "-"))) return message.channel.send(`${message.author}, Já há um ticket em aberto! Entre em contato com algum staff.`);
@@ -131,12 +116,11 @@ exports.run = async (bot, message) => {
                                         .setTimestamp()
                                     message.channel.send(pEmbed)
                                         .then(m => {
-                                            message.react("682047276759384112")
+                                            m.react("682047276759384112")
                                             m.delete(15000);
                                         });
-                                    let Staff = '690636656860069909';
-                                    r.send(`${message.author}, aguarde por um <@${Staff}>`)
-                                    r.send(` **Atenção! ao final do suporte, dê !fimticket** `)
+                                    let Staff = message.guild.roles.get("690636656860069909");
+                                    r.send(`${message.author}, aguarde por um ${Staff} \n **Atenção! ao final do suporte, dê !fimticket**`)
                                 })
                             }
                         }

@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const config = require("../config.json");
 
 exports.run = async (bot, message, args, comando) => {
-    if (!message.content.startsWith(config.prefix)) return;
+	if (!message.content.startsWith(config.prefix)) return;
 
 	const member = message.mentions.members.first();
 
@@ -21,12 +21,12 @@ exports.run = async (bot, message, args, comando) => {
 
 
 	let Embed = new Discord.RichEmbed()
-	.setTitle("Kick")
-	.setDescription(`${member.user.tag} foi expulso do servidor.`)
-	.addField(`Kick efetuado por` , ` ${message.author}`)
-	.setColor("RED")
-	.setFooter('Newark Roleplay')
-	.setTimestamp()
+		.setTitle("Kick")
+		.setDescription(`${member.user.tag} foi expulso do servidor.`)
+		.addField(`Kick efetuado por`, ` ${message.author}`)
+		.setColor("RED")
+		.setFooter('Newark Roleplay')
+		.setTimestamp()
 
 	return member
 		.kick()
