@@ -13,10 +13,12 @@ exports.run = async (bot, message) => {
     `
     !nick - Para mudar de nome
     !server - Para mais informações sobre o servidor
-    !ip
+//    !ip
+    !level - Para saber seu level
     `,
 
             `
+    !humor - Deixe-me contar uma piada
     !gado - Para saber quem é o mais gado
     !trigger - Montagem trigger
     !preso - Montagem preso
