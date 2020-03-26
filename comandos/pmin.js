@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("../config.json");
-const moment = require ("moment")
+const moment = require ("moment-timezone")
 moment.locale('pt-br')
-moment(180).utcOffset
 
 exports.run = async (bot, message, args) => {
 if (!message.content.startsWith(config.prefix)) return;
@@ -18,7 +17,7 @@ if (!message.member.roles.find(role => role.name === 'LSPD')) return message.rep
         let pEmbed = new Discord.RichEmbed()
         .setTitle("Inicio Expediente")
         .setThumbnail(avatarr)
-        .setDescription(`Oficial - ${nome}\n\n Entrada: - ${moment().format('L')} as ${moment().format('LT')}`)
+        .setDescription(`Oficial - ${nome}\n\n Entrada: - ${moment().format('L')} às ${moment().tz('America/Sao_Paulo').format('LT')}`)
         .setColor("GREEN")
         .setFooter('Newark Roleplay')
         .setTimestamp()
