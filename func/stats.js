@@ -13,20 +13,20 @@ bot.on('ready', () => {
 
 bot.on("guildMemberAdd", member => {
   let avatarr = member.user.displayAvatarURL;
-  let embed = new Discord.RichEmbed()
+  let embeda = new Discord.RichEmbed()
     .setThumbnail(avatarr)
-    .setDescription(member.user + ` Chegou no **${member.guild.name}**. Seja bem vindo! \n \n Agora estamos em ${bot.users.size} usuários!`)
+    .setDescription(member.user + ` Chegou no **${member.guild.name}**. Seja bem vindo! \n \n Agora estamos com ${bot.users.size} usuários!`)
     .setColor("RANDOM")
     .setTimestamp()
-  const channel = member.guild.channels.get("690582506101145670"); channel.send(embed)
+  const channel = member.guild.channels.get("690582506101145670"); channel.send(embeda)
 });
 bot.on("guildMemberRemove", member => {
   let avatarr = member.user.displayAvatarURL;
-  let embed = new Discord.RichEmbed()
+  let embedr = new Discord.RichEmbed()
     .setThumbnail(avatarr)
     .setDescription(member.user + ` Saiu do **${member.guild.name}**. Espero que volte :C`)
     .setColor("RANDOM")
     .setTimestamp()
-  const channel = member.guild.channels.get("690582506101145670"); channel.send(embed)
+  const channel = member.guild.channels.get("690582506101145670"); channel.send(embedr)
 });
 bot.login(config.token)

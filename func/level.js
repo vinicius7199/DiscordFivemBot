@@ -9,11 +9,13 @@ const database = firebase.database();
 
 bot.on('message', async message => {
     if (message.author.bot) return;
+    if (message.channel.type == "dm") return;
 
     global.xp = '';
     global.nextLevel = '';
     global.canal = '';
     let addpontos = Math.floor(Math.random() * 7) + 8;
+
     database.ref(`Servidores/Levels/${message.guild.id}/${message.author.id}`)
         .once('value').then(async function (snap) {
             if (snap.val() == null) {

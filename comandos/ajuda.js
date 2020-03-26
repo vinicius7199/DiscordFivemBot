@@ -13,15 +13,14 @@ exports.run = async (bot, message) => {
     `
     !nick - Para mudar de nome
     !server - Para mais informações sobre o servidor
-//    !ip
-    !level - Para saber seu level
+    !ip
     `,
 
             `
-    !humor - Deixe-me contar uma piada
     !gado - Para saber quem é o mais gado
     !trigger - Montagem trigger
     !preso - Montagem preso
+    !humor - Para te contar uma piada
     `
     ]
     const Embed = {

@@ -4,6 +4,12 @@ const config = require("../config.json");
 exports.run = async (bot, message, args, comando) => {
 	if (!message.content.startsWith(config.prefix)) return;
 
+	if (!message.member.hasPermission("MANAGE_ROLES")) {
+		return message.reply('Você não tem permissão para banir')
+			.then(m => {
+				setTimeout(function () { m.delete().catch(O_o => { }) }, 10000);
+			})
+	}
 	const member = message.mentions.members.first();
 
 	if (!member) {
@@ -12,14 +18,13 @@ exports.run = async (bot, message, args, comando) => {
 				setTimeout(function () { m.delete().catch(O_o => { }) }, 6000);
 			})
 	}
+
 	if (!member.kickable) {
 		return message.reply('Não consigo dar kick neste usuário.')
 			.then(m => {
 				setTimeout(function () { m.delete().catch(O_o => { }) }, 6000);
 			})
 	}
-
-
 	let Embed = new Discord.RichEmbed()
 		.setTitle("Kick")
 		.setDescription(`${member.user.tag} foi expulso do servidor.`)

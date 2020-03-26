@@ -6,6 +6,9 @@ module.exports.run = async (bot, message, args) => {
     message.delete().catch(O_o => { });
     if (!message.member.hasPermission("MANAGE_WEBHOOKS")) return message.channel.send(`Sem permissão para liberar, ${message.author}`)
 
+    let mande = bot.channels.get("657353461415018556")
+    if(message.channel !== "657353461415018556") return message.reply(`Este comando só pode ser executado no canal ${mande}`)
+    
     if (!args[0]) return message.reply("Mencione as pessoa à ser reprovada!");
 
     if (!args[1]) return message.reply("Informe o ID!");

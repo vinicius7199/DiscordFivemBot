@@ -5,6 +5,11 @@ exports.run = async (bot, message, args) => {
     if (!message.content.startsWith(config.prefix)) return;
     message.delete().catch(O_o => { });
 
+
+    let canals = message.channel
+    let mande = bot.channels.get("657353440393035786")
+    if(canals =! "657353440393035786") return message.reply(`Este comando só pode ser executado no canal ${mande}`)
+
     let autor = message.author
     let channel = bot.channels.get('691018824484388964');
     let sugest = args.slice(0).join(" ");

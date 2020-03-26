@@ -4,6 +4,7 @@ const config = require("../config.json");
 exports.run = async (bot, message, args, comando) => {
     if (!message.content.startsWith(config.prefix)) return;
     const msgs = message.content.slice(config.prefix.length).trim().split(/ +/g);
+    
     message.delete().catch(O_o => { });
 
     if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(`Sem permissão para setar, ${message.author}`)
