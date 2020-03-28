@@ -25,7 +25,7 @@ exports.run = async (bot, message, args) => {
     ];
     let Charadas = [
         'P: Qual o cachorro do fazendeiro?\n R: É o cãopeão.',
-        'P: É redondo, tem um buraquinho no meio , tem apenas 2 letras cuja a primeira é C \nR: CD!',
+        'P: É redondo, tem um buraquinho no meio, tem apenas 2 letras cuja a primeira é C \nR: CD!',
         'P: O que o coador disse para o café? \nR: Lá vem esse pretinho enxer meu saco!',
         'P: O que tem 4 patas e fica em cima do telhado? \n R: O fogão... o fogão é meu eu coloco ele onde eu quiser',
     ];

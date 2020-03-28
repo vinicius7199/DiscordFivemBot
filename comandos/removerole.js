@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
 
     message.delete().catch(O_o => { });
 
-    if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(`Sem permissão para setar, ${message.author}`)
+    if (!message.member.hasPermission("MANAGE_WEBHOOKS")) return message.channel.send(`Sem permissão para setar, ${message.author}`)
 
     let reMember = message.mentions.members.first();
     if (!reMember) return message.reply("Usuário não encontrado!");

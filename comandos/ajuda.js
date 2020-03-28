@@ -23,17 +23,19 @@ exports.run = async (bot, message) => {
     !humor - Para te contar uma piada
     `
     ]
+
+    let avatar = bot.user.displayAvatarURL
     const Embed = {
         color: 0x0099ff,
         title: `Olá`,
         author: {
             name: 'Newark Roleplay',
-            icon_url: 'https://cdn.discordapp.com/avatars/671389178805747731/83eed4f3bc40dd409557d547fa56d52b.png?size=128',
+            icon_url: `${avatar}`,
             url: 'http://viniciusbot.ddns.net/dashboard/',
         },
         description: 'Está perdido? Calma, eu posso te ajudar.',
         thumbnail: {
-            url: 'https://cdn.discordapp.com/avatars/671389178805747731/83eed4f3bc40dd409557d547fa56d52b.png?size=128',
+            url: `${avatar}`,
         },
         fields: [
             {

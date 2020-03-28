@@ -1,6 +1,13 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 const bot = new Discord.Client();
+const firebase = require("firebase");
+
+const firebaseConfig = require("../config.json")
+if(!firebase.apps.length){
+firebase.initializeApp(config.firebaseConfig);
+}
+const database = firebase.database();
 
 bot.on("message", async message => {
   if (message.author.bot) return;
@@ -12,6 +19,12 @@ bot.on('ready', () => {
 })
 
 bot.on("guildMemberAdd", member => {
+
+  database.ref(`Servidores/adv/newark/${member.id}`)
+  .once('value').then(function (snap) {
+      const cargo = snap.val().cargo
+
+      if(!cargo) {
   let avatarr = member.user.displayAvatarURL;
   let embeda = new Discord.RichEmbed()
     .setThumbnail(avatarr)
@@ -19,6 +32,10 @@ bot.on("guildMemberAdd", member => {
     .setColor("RANDOM")
     .setTimestamp()
   const channel = member.guild.channels.get("690582506101145670"); channel.send(embeda)
+}else{
+  console.log(`Usuário com advertencia entrou no servidor`)
+}
+})
 });
 bot.on("guildMemberRemove", member => {
   let avatarr = member.user.displayAvatarURL;
