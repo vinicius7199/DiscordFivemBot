@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const config = require("../config.json");
-const moment = require ("moment")
-moment.locale('pt-br');
+const moment = require ("moment-timezone")
+moment.locale('pt-br')
 
 bot.on('raw', async dados => {
 
@@ -25,7 +25,7 @@ bot.on('raw', async dados => {
         let pEmbed = new Discord.RichEmbed()
         .setTitle("Inicio Expediente")
         .setThumbnail(avatarr)
-        .setDescription(`Staff - ${nome}\n\n Entrada: - ${moment(hora).format('L')} as ${moment(hora).format('LT')}`)
+        .setDescription(`Staff - ${nome}\n\n Entrada: - ${moment().format('L')} às ${moment().tz('America/Sao_Paulo').format('LT')}`)
         .setColor("GREEN")
         .setFooter('Newark Roleplay')
         .setTimestamp()
@@ -34,7 +34,7 @@ bot.on('raw', async dados => {
         let pEmbed = new Discord.RichEmbed()
         .setTitle("Fim Expediente")
         .setThumbnail(avatarr)
-        .setDescription(`Staff - ${nome}\n\n Saída: - ${moment(hora).format('L')} as ${moment(hora).format('LT')}`)
+        .setDescription(`Staff - ${nome}\n\n Saída: - ${moment().format('L')} às ${moment().tz('America/Sao_Paulo').format('LT')}`)
         .setColor("RED")
         .setFooter('Newark Roleplay')
         .setTimestamp()
