@@ -21,7 +21,6 @@ bot.on('raw', async dados => {
     let avatarr = userid.displayAvatarURL;
 
     if (dados.d.channel_id == '692546266894303362')
-//    if(entrar)
     {
         let pEmbed = new Discord.RichEmbed()
         .setTitle("Inicio Expediente")
@@ -32,12 +31,6 @@ bot.on('raw', async dados => {
         .setTimestamp()
       canal.send(pEmbed) 
     } else {
-
-//    let sair = dados.d.channel_id = '692546289434492938';
-
-//    if (dados.d.channel_id == '692546289434492938')
-//    if(sair)
-//    {
         let pEmbed = new Discord.RichEmbed()
         .setTitle("Fim Expediente")
         .setThumbnail(avatarr)
