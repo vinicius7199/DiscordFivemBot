@@ -47,7 +47,7 @@ bot.on("guildMemberAdd", member => {
 //  member.addRole(cargo)
 //  console.log(`Usuário com advertencia entrou no servidor`)
 //}
-})
+//})
 });
 bot.on("guildMemberRemove", member => {
   let avatarr = member.user.displayAvatarURL;
