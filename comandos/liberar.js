@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
 
     let ipEmbed = new Discord.RichEmbed()
         .setTitle("Conecte no servidor")
-        .setDescription(`IP: 45.224.130.98:30120 \n connect 45.224.130.98:30120`)
+        .setDescription(`IP: 142.44.159.141:30120 \n connect 142.44.159.141:30120`)
         .setColor("GREEN")
         .setFooter('Newark Roleplay')
         .setTimestamp()
