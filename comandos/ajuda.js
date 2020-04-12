@@ -31,7 +31,7 @@ exports.run = async (bot, message) => {
         author: {
             name: 'Newark Roleplay',
             icon_url: `${avatar}`,
-            url: 'http://viniciusbot.ddns.net/dashboard/',
+            url: 'google.com.br',
         },
         description: 'Está perdido? Calma, eu posso te ajudar.',
         thumbnail: {
